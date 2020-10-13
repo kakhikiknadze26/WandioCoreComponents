@@ -1,0 +1,9 @@
+language: swift
+
+osx_image: xcode12
+env:
+  matrix:
+    - TEST_SDK=iphonesimulator14.0 OS=14.0 NAME='iPhone 11'
+
+script:
+  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project WandioCoreComponents.xcodeproj -scheme WandioCoreComponents -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
