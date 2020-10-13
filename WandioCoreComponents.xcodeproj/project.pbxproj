@@ -16,6 +16,13 @@
 		AA8B4FD125358B0900CAC206 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8B4FCF25358B0900CAC206 /* Main.storyboard */; };
 		AA8B4FD325358B0B00CAC206 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA8B4FD225358B0B00CAC206 /* Assets.xcassets */; };
 		AA8B4FD625358B0B00CAC206 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8B4FD425358B0B00CAC206 /* LaunchScreen.storyboard */; };
+		AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1BF825359AB7009E9218 /* RoundedShadowedButton.swift */; };
+		AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1BF925359AB7009E9218 /* RoundedShadowedControl.swift */; };
+		AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */; };
+		AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0225359ACD009E9218 /* CustomIntensityVisualEffectsView.swift */; };
+		AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */; };
+		AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0C25359AF1009E9218 /* Regex.swift */; };
+		AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +50,13 @@
 		AA8B4FD225358B0B00CAC206 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA8B4FD525358B0B00CAC206 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA8B4FD725358B0B00CAC206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAAD1BF825359AB7009E9218 /* RoundedShadowedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowedButton.swift; sourceTree = "<group>"; };
+		AAAD1BF925359AB7009E9218 /* RoundedShadowedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowedControl.swift; sourceTree = "<group>"; };
+		AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowedView.swift; sourceTree = "<group>"; };
+		AAAD1C0225359ACD009E9218 /* CustomIntensityVisualEffectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectsView.swift; sourceTree = "<group>"; };
+		AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
+		AAAD1C0C25359AF1009E9218 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,9 @@
 		AA8B4FA92535897100CAC206 /* WandioCoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AAAD1BF725359AB7009E9218 /* ShadowedViews */,
+				AAAD1C0125359ACD009E9218 /* VisualEffects */,
+				AAAD1C0725359AF1009E9218 /* Utility */,
 				AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */,
 				AA8B4FAB2535897100CAC206 /* Info.plist */,
 			);
@@ -121,6 +138,34 @@
 				AA8B4FD725358B0B00CAC206 /* Info.plist */,
 			);
 			path = WandioCoreComponentsExamples;
+			sourceTree = "<group>";
+		};
+		AAAD1BF725359AB7009E9218 /* ShadowedViews */ = {
+			isa = PBXGroup;
+			children = (
+				AAAD1BF825359AB7009E9218 /* RoundedShadowedButton.swift */,
+				AAAD1BF925359AB7009E9218 /* RoundedShadowedControl.swift */,
+				AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */,
+			);
+			path = ShadowedViews;
+			sourceTree = "<group>";
+		};
+		AAAD1C0125359ACD009E9218 /* VisualEffects */ = {
+			isa = PBXGroup;
+			children = (
+				AAAD1C0225359ACD009E9218 /* CustomIntensityVisualEffectsView.swift */,
+			);
+			path = VisualEffects;
+			sourceTree = "<group>";
+		};
+		AAAD1C0725359AF1009E9218 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */,
+				AAAD1C0C25359AF1009E9218 /* Regex.swift */,
+				AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */,
+				AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */,
+				AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */,
+				AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */,
+				AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */,
+				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
+				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +538,7 @@
 		AA8B4FBF2535897100CAC206 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KQYJFWTYGY;
 				INFOPLIST_FILE = WandioCoreComponentsTests/Info.plist;
@@ -504,6 +557,7 @@
 		AA8B4FC02535897100CAC206 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KQYJFWTYGY;
 				INFOPLIST_FILE = WandioCoreComponentsTests/Info.plist;
@@ -524,6 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KQYJFWTYGY;
 				INFOPLIST_FILE = WandioCoreComponentsExamples/Info.plist;
@@ -534,6 +589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Wandio.WandioCoreComponentsExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
