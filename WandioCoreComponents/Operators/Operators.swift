@@ -9,6 +9,6 @@ import Foundation
 
 infix operator =|
 
-func =|<T: Equatable>(lhs: T, rhs: [T]) -> Bool {
+public func =|<T: Equatable>(lhs: T, rhs: [T]) -> Bool {
     rhs.contains(where: {lhs == $0})
 }
