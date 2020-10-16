@@ -9,57 +9,62 @@ import UIKit
 
 /// Use this class to create shadowed Control with corner radius on both the view and the shadow.
 @IBDesignable
-public class RoundedShadowedControl: UIControl {
+open class RoundedShadowedControl: UIControl {
     
     public override class var layerClass: AnyClass {
         return CAShapeLayer.self
     }
     
+//    open override var backgroundColor: UIColor? {
+//        get { backgroundLayerColor }
+//        set { backgroundLayerColor = newValue ?? backgroundLayerColor }
+//    }
+    
     private var shadowLayer = CAShapeLayer()
     private lazy var backgroundLayer = configure(CAShapeLayer()) { $0.fillColor = UIColor.white.cgColor }
     
     /// Color of view's first layer. Default is `UIColor.white`
-    @IBInspectable public var backgroundLayerColor: UIColor = .white { didSet { backgroundLayer.fillColor = backgroundLayerColor.cgColor } }
+    @IBInspectable open var backgroundLayerColor: UIColor = .white { didSet { backgroundLayer.fillColor = backgroundLayerColor.cgColor } }
     /// Stroke color of view's first layer. Default is `UIColor.white`
-    @IBInspectable public var backgroundLayerStrokeColor: UIColor = .white { didSet{ backgroundLayer.strokeColor = backgroundLayerStrokeColor.cgColor } }
+    @IBInspectable open var backgroundLayerStrokeColor: UIColor = .white { didSet{ backgroundLayer.strokeColor = backgroundLayerStrokeColor.cgColor } }
     /// Line width of view's first layer. Default is `0`
-    @IBInspectable public var backgroundLayerLineWidth: CGFloat = .zero { didSet { backgroundLayer.lineWidth = backgroundLayerLineWidth } }
+    @IBInspectable open var backgroundLayerLineWidth: CGFloat = .zero { didSet { backgroundLayer.lineWidth = backgroundLayerLineWidth } }
     /// Color of shadow. Default is `.black`
-    @IBInspectable public var shadowColor: UIColor = .black { didSet { shadowLayer.shadowColor = shadowColor.cgColor } }
+    @IBInspectable open var shadowColor: UIColor = .black { didSet { shadowLayer.shadowColor = shadowColor.cgColor } }
     /// Opacity of shadow. Default is `1.0`
-    @IBInspectable public var shadowAlpha: Float = 1.0 { didSet { shadowLayer.shadowOpacity = shadowAlpha } }
+    @IBInspectable open var shadowAlpha: Float = 1.0 { didSet { shadowLayer.shadowOpacity = shadowAlpha } }
     /// Offset of shadow. Default is `(0, -3.0)`
-    @IBInspectable public var shadowOffset: CGSize = CGSize(width: .zero, height: -3.0) { didSet { shadowLayer.shadowOffset = shadowOffset } }
+    @IBInspectable open var shadowOffset: CGSize = CGSize(width: .zero, height: -3.0) { didSet { shadowLayer.shadowOffset = shadowOffset } }
     /// Radius of shadow. Default is `3.0`
-    @IBInspectable public var shadowRadius: CGFloat = 3.0 { didSet { shadowLayer.shadowRadius = shadowRadius } }
+    @IBInspectable open var shadowRadius: CGFloat = 3.0 { didSet { shadowLayer.shadowRadius = shadowRadius } }
     /// Radius of corner. Default is `0`
-    @IBInspectable public var cornerRadius: CGFloat = .zero { didSet { setNeedsLayout(); layoutIfNeeded() } }
+    @IBInspectable open var cornerRadius: CGFloat = .zero { didSet { setNeedsLayout(); layoutIfNeeded() } }
     /// Adjusts shadow offset to fit device's screen by multiplying it on screen factor.
     /// - Warning: You must set screen factor first. E.g. when the app finishes launching.
     /// ```
     /// screenFactor = UIScreen.main.bounds.size.width/414
     /// ```
-    @IBInspectable public var adjustShadowOffsetToFitDevice: Bool { get { false } set { if(newValue) { fitShadowOffsetToDevice() } } }
+    @IBInspectable open var adjustShadowOffsetToFitDevice: Bool { get { false } set { if(newValue) { fitShadowOffsetToDevice() } } }
     /// Adjusts shadow radius to fit device's screen by multiplying it on screen factor
     /// - Warning: You must set screen factor first. E.g. when the app finishes launching.
     /// ```
     /// screenFactor = UIScreen.main.bounds.size.width/414
     /// ```
-    @IBInspectable public var adjustShadowRadiusToFitDevice: Bool { get { false } set { if(newValue) { fitShadowRadiusToDevice() } } }
+    @IBInspectable open var adjustShadowRadiusToFitDevice: Bool { get { false } set { if(newValue) { fitShadowRadiusToDevice() } } }
     /// Adjusts corner radius to fit device's screen by multiplying it on screen factor
     /// - Warning: You must set screen factor first. E.g. when the app finishes launching.
     /// ```
     /// screenFactor = UIScreen.main.bounds.size.width/414
     /// ```
-    @IBInspectable public var adjustCornerRadiusToFitDevice: Bool { get { false } set { if(newValue) { fitCornerRadiusToDevice() } } }
+    @IBInspectable open var adjustCornerRadiusToFitDevice: Bool { get { false } set { if(newValue) { fitCornerRadiusToDevice() } } }
     /// Adjusts background layer's line width to fit device's screen by multiplying it on screen factor
     /// - Warning: You must set screen factor first. E.g. when the app finishes launching.
     /// ```
     /// screenFactor = UIScreen.main.bounds.size.width/414
     /// ```
-    @IBInspectable public var adjustLineWidthToFitDevice: Bool { get { false } set { if(newValue) { fitLineWidthToDevice() } } }
+    @IBInspectable open var adjustLineWidthToFitDevice: Bool { get { false } set { if(newValue) { fitLineWidthToDevice() } } }
     /// Corners available to round. Default is `.allCorners`
-    public var roundingCorners: UIRectCorner = .allCorners { didSet { setNeedsLayout(); layoutIfNeeded() } }
+    open var roundingCorners: UIRectCorner = .allCorners { didSet { setNeedsLayout(); layoutIfNeeded() } }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,7 +81,7 @@ public class RoundedShadowedControl: UIControl {
         addShadowAndBackground()
     }
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         initialize()
     }
@@ -92,7 +97,7 @@ public class RoundedShadowedControl: UIControl {
         layer.insertSublayer(backgroundLayer, at: 1)
     }
     
-    public func updateLayers() {
+    open func updateLayers() {
         shadowLayer.shadowColor = shadowColor.cgColor
         shadowLayer.shadowOpacity = shadowAlpha
         shadowLayer.shadowOffset = shadowOffset

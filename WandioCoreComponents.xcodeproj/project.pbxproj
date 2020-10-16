@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA01C5F825382F4600AC4775 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01C5F725382F4600AC4775 /* Operators.swift */; };
+		AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */; };
+		AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D070525375E6800DAE979 /* OTPTextField.swift */; };
+		AA1D07132537693000DAE979 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D07122537693000DAE979 /* OTPView.swift */; };
 		AA8B4FB12535897100CAC206 /* WandioCoreComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */; };
 		AA8B4FB62535897100CAC206 /* WandioCoreComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B4FB52535897100CAC206 /* WandioCoreComponentsTests.swift */; };
 		AA8B4FB82535897100CAC206 /* WandioCoreComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +27,7 @@
 		AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */; };
 		AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0C25359AF1009E9218 /* Regex.swift */; };
 		AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */; };
+		AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA01C5F725382F4600AC4775 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowedTextField.swift; sourceTree = "<group>"; };
+		AA1D070525375E6800DAE979 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
+		AA1D07122537693000DAE979 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WandioCoreComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WandioCoreComponents.h; sourceTree = "<group>"; };
 		AA8B4FAB2535897100CAC206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +66,7 @@
 		AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		AAAD1C0C25359AF1009E9218 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactor.swift; sourceTree = "<group>"; };
+		AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA01C5F625382F2F00AC4775 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				AA01C5F725382F4600AC4775 /* Operators.swift */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
+		AA1D070425375E5B00DAE979 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				AA1D070525375E6800DAE979 /* OTPTextField.swift */,
+				AA1D07122537693000DAE979 /* OTPView.swift */,
+				AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
 		AA8B4F9D2535897100CAC206 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +136,8 @@
 		AA8B4FA92535897100CAC206 /* WandioCoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AA01C5F625382F2F00AC4775 /* Operators */,
+				AA1D070425375E5B00DAE979 /* OTP */,
 				AAAD1BF725359AB7009E9218 /* ShadowedViews */,
 				AAAD1C0125359ACD009E9218 /* VisualEffects */,
 				AAAD1C0725359AF1009E9218 /* Utility */,
@@ -146,6 +176,7 @@
 				AAAD1BF825359AB7009E9218 /* RoundedShadowedButton.swift */,
 				AAAD1BF925359AB7009E9218 /* RoundedShadowedControl.swift */,
 				AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */,
+				AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */,
 			);
 			path = ShadowedViews;
 			sourceTree = "<group>";
@@ -307,10 +338,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1D07132537693000DAE979 /* OTPView.swift in Sources */,
 				AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */,
 				AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */,
+				AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */,
 				AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */,
+				AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */,
+				AA01C5F825382F4600AC4775 /* Operators.swift in Sources */,
 				AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */,
+				AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */,
 				AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */,
 				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
 				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,

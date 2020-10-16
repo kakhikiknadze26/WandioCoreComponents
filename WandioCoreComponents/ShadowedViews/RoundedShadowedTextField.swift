@@ -1,15 +1,15 @@
 //
-//  RoundedShadowedView.swift
-//  KKUIComponents
+//  RoundedShadowedTextField.swift
+//  WandioCoreComponents
 //
-//  Created by Kakhi Kiknadze on 9/20/20.
+//  Created by Kakhi Kiknadze on 10/14/20.
 //
 
 import UIKit
 
 /// Use this class to create shadowed view with corner radius on both the view and the shadow.
 @IBDesignable
-open class RoundedShadowedView: UIView {
+open class RoundedShadowedTextField: UITextField {
     
     public override class var layerClass: AnyClass {
         return CAShapeLayer.self
@@ -17,7 +17,7 @@ open class RoundedShadowedView: UIView {
     
 //    open override var backgroundColor: UIColor? {
 //        get { backgroundLayerColor }
-//        set { backgroundLayerColor = newValue ?? backgroundLayerColor }
+//        set { backgroundLayerColor = newValue ?? .white }
 //    }
     
     private var shadowLayer = CAShapeLayer()
@@ -86,7 +86,7 @@ open class RoundedShadowedView: UIView {
         initialize()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         superview?.layoutIfNeeded()
         setPaths()
@@ -113,7 +113,7 @@ open class RoundedShadowedView: UIView {
     
 }
 
-public extension RoundedShadowedView {
+public extension RoundedShadowedTextField {
     
     func fitShadowOffsetToDevice() {
         shadowOffset = CGSize(width: shadowOffset.width * screenFactor, height: shadowOffset.height * screenFactor)
@@ -132,3 +132,4 @@ public extension RoundedShadowedView {
     }
     
 }
+
