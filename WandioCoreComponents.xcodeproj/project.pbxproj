@@ -28,6 +28,9 @@
 		AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0C25359AF1009E9218 /* Regex.swift */; };
 		AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */; };
 		AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */; };
+		AACDC717253A0E8B00FDA8A9 /* WandioPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDC716253A0E8B00FDA8A9 /* WandioPageControl.swift */; };
+		AACDC71C253A0F0500FDA8A9 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDC71B253A0F0500FDA8A9 /* UIViewController+Preview.swift */; };
+		AACDC721253A146A00FDA8A9 /* WandioPageControlDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACDC720253A146A00FDA8A9 /* WandioPageControlDot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		AAAD1C0C25359AF1009E9218 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactor.swift; sourceTree = "<group>"; };
 		AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewDelegate.swift; sourceTree = "<group>"; };
+		AACDC716253A0E8B00FDA8A9 /* WandioPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioPageControl.swift; sourceTree = "<group>"; };
+		AACDC71B253A0F0500FDA8A9 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		AACDC720253A146A00FDA8A9 /* WandioPageControlDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioPageControlDot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +142,9 @@
 		AA8B4FA92535897100CAC206 /* WandioCoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AACDC71B253A0F0500FDA8A9 /* UIViewController+Preview.swift */,
 				AA01C5F625382F2F00AC4775 /* Operators */,
+				AACDC715253A0E3F00FDA8A9 /* PageControl */,
 				AA1D070425375E5B00DAE979 /* OTP */,
 				AAAD1BF725359AB7009E9218 /* ShadowedViews */,
 				AAAD1C0125359ACD009E9218 /* VisualEffects */,
@@ -197,6 +205,15 @@
 				AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		AACDC715253A0E3F00FDA8A9 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				AACDC716253A0E8B00FDA8A9 /* WandioPageControl.swift */,
+				AACDC720253A146A00FDA8A9 /* WandioPageControlDot.swift */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,8 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1D07132537693000DAE979 /* OTPView.swift in Sources */,
+				AACDC71C253A0F0500FDA8A9 /* UIViewController+Preview.swift in Sources */,
 				AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */,
 				AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */,
+				AACDC717253A0E8B00FDA8A9 /* WandioPageControl.swift in Sources */,
 				AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */,
 				AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */,
 				AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */,
@@ -349,6 +368,7 @@
 				AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */,
 				AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */,
 				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
+				AACDC721253A146A00FDA8A9 /* WandioPageControlDot.swift in Sources */,
 				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
