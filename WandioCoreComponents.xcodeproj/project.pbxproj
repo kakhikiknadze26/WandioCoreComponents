@@ -11,6 +11,7 @@
 		AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */; };
 		AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D070525375E6800DAE979 /* OTPTextField.swift */; };
 		AA1D07132537693000DAE979 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D07122537693000DAE979 /* OTPView.swift */; };
+		AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA704889253DB21F000AC8F4 /* Preview.swift */; };
 		AA8B4FB12535897100CAC206 /* WandioCoreComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */; };
 		AA8B4FB62535897100CAC206 /* WandioCoreComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B4FB52535897100CAC206 /* WandioCoreComponentsTests.swift */; };
 		AA8B4FB82535897100CAC206 /* WandioCoreComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,6 +46,7 @@
 		AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowedTextField.swift; sourceTree = "<group>"; };
 		AA1D070525375E6800DAE979 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		AA1D07122537693000DAE979 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		AA704889253DB21F000AC8F4 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WandioCoreComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WandioCoreComponents.h; sourceTree = "<group>"; };
 		AA8B4FAB2535897100CAC206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				AAAD1C0725359AF1009E9218 /* Utility */,
 				AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */,
 				AA8B4FAB2535897100CAC206 /* Info.plist */,
+				AA704889253DB21F000AC8F4 /* Preview.swift */,
 			);
 			path = WandioCoreComponents;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */,
 				AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */,
 				AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */,
+				AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */,
 				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
 				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,
 			);
