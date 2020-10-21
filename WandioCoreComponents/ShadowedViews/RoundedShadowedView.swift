@@ -20,6 +20,7 @@ open class RoundedShadowedView: UIView {
 //        set { backgroundLayerColor = newValue ?? backgroundLayerColor }
 //    }
     
+    open override var backgroundColor: UIColor? { get { UIColor(cgColor: backgroundLayer.fillColor!) } set { backgroundLayer.fillColor = newValue?.cgColor } }
     private var shadowLayer = CAShapeLayer()
     private lazy var backgroundLayer = configure(CAShapeLayer()) { $0.fillColor = UIColor.white.cgColor }
     
