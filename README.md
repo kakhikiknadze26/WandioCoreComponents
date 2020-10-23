@@ -103,6 +103,107 @@ By calling ```func updateState(_ state: OTPTextFieldState)``` on ```OTPView``` y
 
 It also has state ```OTPTextFieldState``` with cases ```.normal``` and ```.error```. You can change state by calling ```updateState(.error)``` for example and by default it will set stroke color to ```.red``` and make border's line width ```2``` but of course you can create your own UI logic by subclassing ```OTPTextField``` and overriding ```func updateState(_ state: OTPTextFieldState)``` method.
 
+#### WandioBottomSheet
+
+Expandable/Collapsable Bottom sheet consists of three main content: Background view, Handler area and content view. You can pan handle area or content view to expand, collapse or dismiss sheet. Tapping background also triggers dismiss.
+
+You can subclass ```WandioBottomSheet```, make your own handler and content instances. You can use ```WandioBottomSheetHandlerView``` as your handler area or make your own custom view. Handler area can be ignored by not providing it and you can use only content view. 
+
+```swift
+class BottomSheetContent: UIView {
+    
+    let child = UIView()
+    let label = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(child)
+        child.backgroundColor = .clear
+        child.translatesAutoresizingMaskIntoConstraints = false
+        child.heightAnchor.constraint(equalToConstant: 360).isActive = true
+        child.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        child.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        child.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        child.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        label.text = "Content"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        child.addSubview(label)
+        label.centerXAnchor.constraint(equalTo: child.centerXAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: child.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+}
+
+class CustomBottomSheet: WandioBottomSheet {
+    
+    private let handler = WandioBottomSheetHandlerView()
+    private let content = BottomSheetContent()
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configure()
+    }
+    
+    private func configure() {
+        contentHeight = 300 * screenFactor // setting contentHeight will fix content height by given value and ignore its original height
+        addHandle(handler)
+        addContent(content)
+    }
+    
+}
+
+class YourViewController: UIViewController {
+  
+  // Present bottom sheet by calling present on view controller or view itself
+
+    @objc private func presentDefaultWandioBottomSheet() {
+        DefaultWandioBottomSheet().present(on: self)
+    }
+    
+    @objc private func presentCustomBottomSheet() {
+        CustomBottomSheet().present(on: self)
+    }
+    
+}
+```
+
+By setting bottom sheet's ```delegate``` you can implement these methods and add your own custom logic while pan is happening. e.g. add some extra animations on your view controller or elsewhere.
+
+```swift
+/// Tells the delegate that bottom sheet pan gesture began
+func bottomSheet(_ sheet: WandioBottomSheet, didBeginPanGesture recognizer: UIPanGestureRecognizer)
+/// Tells the delegate that bottom sheet pan gesture changed
+func bottomSheet(_ sheet: WandioBottomSheet, didChangePanGesture recognizer: UIPanGestureRecognizer)
+/// Tells the delegate that bottom sheet pan gesture ended
+func bottomSheet(_ sheet: WandioBottomSheet, didEndPanGesture recognizer: UIPanGestureRecognizer)
+```
+
+You can override those methods called during pan gesture in your ```WandioBottomSheet``` subclass to customize behaviour.
+
+```swift
+open func beganPanGesture(_ recognizer: UIPanGestureRecognizer)
+
+open func changedPanGesture(_ recognizer: UIPanGestureRecognizer)
+
+open func endedPanGesture(_ recognizer: UIPanGestureRecognizer)
+```
+
+You can add content and handle area's subviews by calling
+
+```Swift
+func addContent(_ content: UIView, at index: Int? = nil)
+func addHandle(_ handle: UIView, at index: Int? = nil)
+```
+
 ## Author
 Kakhi Kiknadze, kakhi.kiknadze@wandio.com
 
