@@ -87,7 +87,7 @@ open class RoundedShadowedView: UIView {
         initialize()
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         superview?.layoutIfNeeded()
         setPaths()

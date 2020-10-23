@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA8B4FAF2535897100CAC206"
+               BuildableName = "WandioCoreComponentsTests.xctest"
+               BlueprintName = "WandioCoreComponentsTests"
+               ReferencedContainer = "container:WandioCoreComponents.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
