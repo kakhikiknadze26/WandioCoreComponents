@@ -42,6 +42,10 @@ open class WandioBottomSheet: UIView {
     }
     
     // MARK: - Initialize
+    deinit {
+        print("WandioBottomSheet Deinitialized!!!")
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -113,7 +117,6 @@ open class WandioBottomSheet: UIView {
     
     private func setupHandleAreaConstraints() {
         handleArea.translatesAutoresizingMaskIntoConstraints = false
-        handleArea.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor).isActive = true
         handleArea.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         handleArea.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         guard let handleHeight = handleHeight else { return }
@@ -143,7 +146,7 @@ open class WandioBottomSheet: UIView {
 
 // MARK: - Presentation
 extension WandioBottomSheet {
-    
+
     /// Present bottom sheet on view controller
     /// - Parameters:
     ///   - viewController: Presenting view controller
@@ -152,7 +155,7 @@ extension WandioBottomSheet {
     open func present(on viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         present(on: viewController.view, animated: animated, completion: completion)
     }
-    
+
     /// Presents bottom sheet on view
     /// - Parameters:
     ///   - view: Presenting view
@@ -173,7 +176,7 @@ extension WandioBottomSheet {
             completion?()
         }
     }
-    
+
     /// Dismiss bottom sheet with animation and completion
     /// - Parameters:
     ///   - animated: Dismiss with animation. Default is `true`
@@ -188,7 +191,7 @@ extension WandioBottomSheet {
         }
         animateDismiss(completion: completion)
     }
-    
+
     private func addTopConstraintOnHandlerArea() {
         let height = bounds.height - sheetHeight
         let constant: CGFloat = max(0, height - safeAreaInsets.top - safeAreaInsets.bottom)
@@ -196,7 +199,7 @@ extension WandioBottomSheet {
         topConstraint = handleArea.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: constant)
         topConstraint?.isActive = true
     }
-    
+
 }
 
 // MARK: - Animations
@@ -228,7 +231,7 @@ extension WandioBottomSheet {
             completion?()
         }
     }
-    
+
     /// Background remove animation
     private func animateBackgroundViewRemove() {
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut) {
@@ -253,7 +256,7 @@ extension WandioBottomSheet {
         handleArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleTap(recognizer:))))
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.handlePan(recognizer:))))
     }
-    
+
     open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let hitView = super.hitTest(point, with: event)
         if hitView === self {
@@ -286,7 +289,7 @@ extension WandioBottomSheet {
             break
         }
     }
-    
+
     private func expand(_ expand: Bool) {
         topConstraint?.constant = expand ? 0 : originalTopConstraintConstant
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
@@ -295,14 +298,14 @@ extension WandioBottomSheet {
             self.isExpanded.toggle()
         }
     }
-    
+
     open func beganPanGesture(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self)
         guard !(isExpanded && translation.y < .zero) else { return }
         shouldDismiss = (translation.y > .zero && !isExpanded)
         delegate?.bottomSheet(self, didBeginPanGesture: recognizer)
     }
-    
+
     open func changedPanGesture(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self)
         let newConstant = max(0, (topConstraint?.constant ?? 0) + translation.y)
@@ -310,7 +313,7 @@ extension WandioBottomSheet {
         recognizer.setTranslation(.zero, in: self)
         delegate?.bottomSheet(self, didChangePanGesture: recognizer)
     }
-    
+
     open func endedPanGesture(_ recognizer: UIPanGestureRecognizer) {
         shouldDismiss ? dismiss() : expand(nextState == .expanded)
         delegate?.bottomSheet(self, didEndPanGesture: recognizer)

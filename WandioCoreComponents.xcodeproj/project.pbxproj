@@ -13,6 +13,8 @@
 		AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D070525375E6800DAE979 /* OTPTextField.swift */; };
 		AA1D07132537693000DAE979 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D07122537693000DAE979 /* OTPView.swift */; };
 		AA1F801D2543141D00E3BB7A /* WandioBottomSheetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F801C2543141D00E3BB7A /* WandioBottomSheetExample.swift */; };
+		AA1F80252543182B00E3BB7A /* RetainCycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F80242543182B00E3BB7A /* RetainCycleTests.swift */; };
+		AA1F802E2543264000E3BB7A /* RetainCycleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F802D2543264000E3BB7A /* RetainCycleTest.swift */; };
 		AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA704889253DB21F000AC8F4 /* Preview.swift */; };
 		AA7048A2253DB326000AC8F4 /* WandioBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */; };
 		AA8B4FB12535897100CAC206 /* WandioCoreComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */; };
@@ -53,6 +55,8 @@
 		AA1D070525375E6800DAE979 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		AA1D07122537693000DAE979 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		AA1F801C2543141D00E3BB7A /* WandioBottomSheetExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheetExample.swift; sourceTree = "<group>"; };
+		AA1F80242543182B00E3BB7A /* RetainCycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainCycleTests.swift; sourceTree = "<group>"; };
+		AA1F802D2543264000E3BB7A /* RetainCycleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainCycleTest.swift; sourceTree = "<group>"; };
 		AA704889253DB21F000AC8F4 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheet.swift; sourceTree = "<group>"; };
 		AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WandioCoreComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,14 @@
 			path = WandioBottomSheetExample;
 			sourceTree = "<group>";
 		};
+		AA1F802C2543261C00E3BB7A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA1F802D2543264000E3BB7A /* RetainCycleTest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AA7048A0253DB2CC000AC8F4 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +195,8 @@
 		AA8B4FB42535897100CAC206 /* WandioCoreComponentsTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA1F802C2543261C00E3BB7A /* Extensions */,
+				AA1F80242543182B00E3BB7A /* RetainCycleTests.swift */,
 				AA8B4FB52535897100CAC206 /* WandioCoreComponentsTests.swift */,
 				AA8B4FB72535897100CAC206 /* Info.plist */,
 			);
@@ -404,7 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1F802E2543264000E3BB7A /* RetainCycleTest.swift in Sources */,
 				AA8B4FB62535897100CAC206 /* WandioCoreComponentsTests.swift in Sources */,
+				AA1F80252543182B00E3BB7A /* RetainCycleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
