@@ -12,6 +12,7 @@
 		AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */; };
 		AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D070525375E6800DAE979 /* OTPTextField.swift */; };
 		AA1D07132537693000DAE979 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D07122537693000DAE979 /* OTPView.swift */; };
+		AA1F801D2543141D00E3BB7A /* WandioBottomSheetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F801C2543141D00E3BB7A /* WandioBottomSheetExample.swift */; };
 		AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA704889253DB21F000AC8F4 /* Preview.swift */; };
 		AA7048A2253DB326000AC8F4 /* WandioBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */; };
 		AA8B4FB12535897100CAC206 /* WandioCoreComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */; };
@@ -51,6 +52,7 @@
 		AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowedTextField.swift; sourceTree = "<group>"; };
 		AA1D070525375E6800DAE979 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		AA1D07122537693000DAE979 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		AA1F801C2543141D00E3BB7A /* WandioBottomSheetExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheetExample.swift; sourceTree = "<group>"; };
 		AA704889253DB21F000AC8F4 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheet.swift; sourceTree = "<group>"; };
 		AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WandioCoreComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,14 @@
 			path = OTP;
 			sourceTree = "<group>";
 		};
+		AA1F801B2543140600E3BB7A /* WandioBottomSheetExample */ = {
+			isa = PBXGroup;
+			children = (
+				AA1F801C2543141D00E3BB7A /* WandioBottomSheetExample.swift */,
+			);
+			path = WandioBottomSheetExample;
+			sourceTree = "<group>";
+		};
 		AA7048A0253DB2CC000AC8F4 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +192,7 @@
 		AA8B4FC825358B0800CAC206 /* WandioCoreComponentsExamples */ = {
 			isa = PBXGroup;
 			children = (
+				AA1F801B2543140600E3BB7A /* WandioBottomSheetExample */,
 				AA8B4FC925358B0800CAC206 /* AppDelegate.swift */,
 				AA8B4FCB25358B0800CAC206 /* SceneDelegate.swift */,
 				AA8B4FCD25358B0800CAC206 /* ViewController.swift */,
@@ -402,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8B4FCE25358B0800CAC206 /* ViewController.swift in Sources */,
+				AA1F801D2543141D00E3BB7A /* WandioBottomSheetExample.swift in Sources */,
 				AA8B4FCA25358B0800CAC206 /* AppDelegate.swift in Sources */,
 				AA8B4FCC25358B0800CAC206 /* SceneDelegate.swift in Sources */,
 			);
