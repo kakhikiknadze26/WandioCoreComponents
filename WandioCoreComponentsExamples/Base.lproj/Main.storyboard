@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qof-7n-3ta">
+                                <rect key="frame" x="0.0" y="44" width="414" height="389"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Sk-YsI">
                                 <rect key="frame" x="95.5" y="433" width="223" height="30"/>
                                 <state key="normal" title="Present Bottom Sheet Controller"/>
@@ -27,10 +30,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qof-7n-3ta" secondAttribute="trailing" id="QAy-QU-7is"/>
+                            <constraint firstItem="rhk-Sk-YsI" firstAttribute="top" secondItem="qof-7n-3ta" secondAttribute="bottom" id="QpS-90-eU0"/>
                             <constraint firstItem="rhk-Sk-YsI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YOm-e2-ERR"/>
+                            <constraint firstItem="qof-7n-3ta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l9E-3n-0aM"/>
                             <constraint firstItem="rhk-Sk-YsI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lgf-YK-wvd"/>
+                            <constraint firstItem="qof-7n-3ta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r3J-hr-Jxh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="qof-7n-3ta" id="p13-OK-Ktp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

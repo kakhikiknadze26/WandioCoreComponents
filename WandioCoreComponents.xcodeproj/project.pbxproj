@@ -17,6 +17,9 @@
 		AA1F802E2543264000E3BB7A /* RetainCycleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F802D2543264000E3BB7A /* RetainCycleTest.swift */; };
 		AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA704889253DB21F000AC8F4 /* Preview.swift */; };
 		AA7048A2253DB326000AC8F4 /* WandioBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */; };
+		AA8603FE2548310100AD90B6 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8603FD2548310100AD90B6 /* UIImage+Extensions.swift */; };
+		AA8604062548315F00AD90B6 /* ImageCachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8604052548315F00AD90B6 /* ImageCachable.swift */; };
+		AA86040E254831EE00AD90B6 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86040D254831EE00AD90B6 /* ImageCache.swift */; };
 		AA8B4FB12535897100CAC206 /* WandioCoreComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */; };
 		AA8B4FB62535897100CAC206 /* WandioCoreComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8B4FB52535897100CAC206 /* WandioCoreComponentsTests.swift */; };
 		AA8B4FB82535897100CAC206 /* WandioCoreComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,6 +61,9 @@
 		AA1F802D2543264000E3BB7A /* RetainCycleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainCycleTest.swift; sourceTree = "<group>"; };
 		AA704889253DB21F000AC8F4 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AA7048A1253DB326000AC8F4 /* WandioBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheet.swift; sourceTree = "<group>"; };
+		AA8603FD2548310100AD90B6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		AA8604052548315F00AD90B6 /* ImageCachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCachable.swift; sourceTree = "<group>"; };
+		AA86040D254831EE00AD90B6 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		AA8B4FA72535897100CAC206 /* WandioCoreComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WandioCoreComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8B4FAA2535897100CAC206 /* WandioCoreComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WandioCoreComponents.h; sourceTree = "<group>"; };
 		AA8B4FAB2535897100CAC206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +159,15 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
+		AA8603FC2548301C00AD90B6 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				AA8604052548315F00AD90B6 /* ImageCachable.swift */,
+				AA86040D254831EE00AD90B6 /* ImageCache.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
 		AA8B4F9D2535897100CAC206 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +191,7 @@
 		AA8B4FA92535897100CAC206 /* WandioCoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AA8603FC2548301C00AD90B6 /* ImageDownloader */,
 				AAF3EE642542F3EB00EA7631 /* Extensions */,
 				AA7048A0253DB2CC000AC8F4 /* BottomSheet */,
 				AA01C5F625382F2F00AC4775 /* Operators */,
@@ -248,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				AAF3EE652542F3FE00EA7631 /* UIView+Extensions.swift */,
+				AA8603FD2548310100AD90B6 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,16 +412,19 @@
 				AA067E7D2540B54100307520 /* WandioBottomSheetDelegate.swift in Sources */,
 				AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */,
 				AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */,
+				AA8604062548315F00AD90B6 /* ImageCachable.swift in Sources */,
 				AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */,
 				AAF3EE662542F3FE00EA7631 /* UIView+Extensions.swift in Sources */,
 				AAF3EE602542F3BC00EA7631 /* DefaultBottomSheet.swift in Sources */,
 				AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */,
+				AA86040E254831EE00AD90B6 /* ImageCache.swift in Sources */,
 				AA01C5F825382F4600AC4775 /* Operators.swift in Sources */,
 				AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */,
 				AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */,
 				AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */,
 				AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */,
 				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
+				AA8603FE2548310100AD90B6 /* UIImage+Extensions.swift in Sources */,
 				AA7048A2253DB326000AC8F4 /* WandioBottomSheet.swift in Sources */,
 				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,
 			);
