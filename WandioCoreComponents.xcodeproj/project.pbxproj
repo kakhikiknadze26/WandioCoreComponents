@@ -31,7 +31,6 @@
 		AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */; };
 		AAAD1C0325359ACD009E9218 /* CustomIntensityVisualEffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0225359ACD009E9218 /* CustomIntensityVisualEffectsView.swift */; };
 		AAAD1C0E25359AF1009E9218 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */; };
-		AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0C25359AF1009E9218 /* Regex.swift */; };
 		AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */; };
 		AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */; };
 		AAF3EE602542F3BC00EA7631 /* DefaultBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF3EE5F2542F3BC00EA7631 /* DefaultBottomSheet.swift */; };
@@ -78,7 +77,6 @@
 		AAAD1BFA25359AB7009E9218 /* RoundedShadowedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowedView.swift; sourceTree = "<group>"; };
 		AAAD1C0225359ACD009E9218 /* CustomIntensityVisualEffectsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectsView.swift; sourceTree = "<group>"; };
 		AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
-		AAAD1C0C25359AF1009E9218 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactor.swift; sourceTree = "<group>"; };
 		AAC906D225384AC900A90B8E /* OTPViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewDelegate.swift; sourceTree = "<group>"; };
 		AAF3EE5F2542F3BC00EA7631 /* DefaultBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBottomSheet.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				AAAD1C0825359AF1009E9218 /* UtilityFunctions.swift */,
-				AAAD1C0C25359AF1009E9218 /* Regex.swift */,
 				AAAD1C0D25359AF1009E9218 /* ScreenFactor.swift */,
 			);
 			path = Utility;
@@ -395,7 +392,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1D07132537693000DAE979 /* OTPView.swift in Sources */,
-				AAAD1C1125359AF1009E9218 /* Regex.swift in Sources */,
 				AA067E7D2540B54100307520 /* WandioBottomSheetDelegate.swift in Sources */,
 				AAAD1BFD25359AB7009E9218 /* RoundedShadowedView.swift in Sources */,
 				AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */,
