@@ -9,8 +9,6 @@ import UIKit
 
 public final class ImageLoader: Cacheable {
     
-    public static let shared = ImageLoader()
-    
     /// Loads an image using the given url from cache if it's cached. Otherwise it downloads the data, returns UIImage and caches it.
     /// - Parameters:
     ///   - url: URL of the image
@@ -41,7 +39,7 @@ public extension UIImageView {
     ///   - completion: Completion handler
     func setImage(from url: URL, placeholderImage: UIImage? = nil, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completion: ((Error?) -> Void)? = nil) {
         image = placeholderImage
-        ImageLoader.shared.loadImage(from: url, cachePolicy: cachePolicy) { [weak self] image, error in
+        ImageLoader().loadImage(from: url, cachePolicy: cachePolicy) { [weak self] image, error in
             if let image = image {
                 self?.image = image
             }

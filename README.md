@@ -204,7 +204,18 @@ func addContent(_ content: UIView, at index: Int? = nil)
 func addHandle(_ handle: UIView, at index: Int? = nil)
 ```
 
+#### ImageLoader
+
+Download image from network or load it from cache. With simple extension on ```UIImageView``` you can load ```UIImage``` and set it.
+
+```swift
+let imageView = UIImageView()
+let url = URL(string: "www.yourimageurl.com")!
+imageView.setImage(from: url, placeholderImage: UIImage(named: "youtImage"), cachePolicy: .useProtocolCachePolicy, completion: nil)
+```
+
 ## Author
+
 Kakhi Kiknadze, kakhi.kiknadze@wandio.com
 
 ## License
