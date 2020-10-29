@@ -148,7 +148,6 @@ public extension Cache where Key: Codable, Value: Codable {
     
     func removeFromDisk(withName name: String, using fileManager: FileManager = .default) throws {
         guard let url = makeURL(withName: name, using: fileManager) else { throw Error.invalidDirectory }
-        guard fileManager.fileExists(atPath: name) else { throw Error.fileNotExists }
         try fileManager.removeItem(at: url)
     }
     
