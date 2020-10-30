@@ -49,8 +49,8 @@ open class OTPTextField: RoundedShadowedTextField {
     /// - Parameter state: Text field state. Can be `.normal` or `.error`
     open func updateState(_ state: OTPTextFieldState) {
         self.currentState = state
-        backgroundLayerStrokeColor = state == .error ? errorColor : .clear
-        backgroundLayerLineWidth = state == .error ? 2 * screenFactor : .zero
+        strokeColor = state == .error ? errorColor : .clear
+        lineWidth = state == .error ? 2 * screenFactor : .zero
     }
     
     private func setup() {

@@ -15,21 +15,20 @@ open class RoundedShadowedView: UIView {
         return CAShapeLayer.self
     }
     
-//    open override var backgroundColor: UIColor? {
-//        get { backgroundLayerColor }
-//        set { backgroundLayerColor = newValue ?? backgroundLayerColor }
-//    }
+    open override var backgroundColor: UIColor? {
+        get { backgroundLayerColor }
+        set { backgroundLayerColor = newValue ?? backgroundLayerColor }
+    }
     
-    open override var backgroundColor: UIColor? { get { UIColor(cgColor: backgroundLayer.fillColor!) } set { backgroundLayer.fillColor = newValue?.cgColor } }
     private var shadowLayer = CAShapeLayer()
     private lazy var backgroundLayer = configure(CAShapeLayer()) { $0.fillColor = UIColor.white.cgColor }
     
     /// Color of view's first layer. Default is `UIColor.white`
-    @IBInspectable open var backgroundLayerColor: UIColor = .white { didSet { backgroundLayer.fillColor = backgroundLayerColor.cgColor } }
+    internal var backgroundLayerColor: UIColor = .white { didSet { backgroundLayer.fillColor = backgroundLayerColor.cgColor } }
     /// Stroke color of view's first layer. Default is `UIColor.white`
-    @IBInspectable open var backgroundLayerStrokeColor: UIColor = .white { didSet { backgroundLayer.strokeColor = backgroundLayerStrokeColor.cgColor } }
+    @IBInspectable open var strokeColor: UIColor = .white { didSet{ backgroundLayer.strokeColor = strokeColor.cgColor } }
     /// Line width of view's first layer. Default is `0`
-    @IBInspectable open var backgroundLayerLineWidth: CGFloat = .zero { didSet { backgroundLayer.lineWidth = backgroundLayerLineWidth } }
+    @IBInspectable open var lineWidth: CGFloat = .zero { didSet { backgroundLayer.lineWidth = lineWidth } }
     /// Color of shadow. Default is `.black`
     @IBInspectable open var shadowColor: UIColor = .black { didSet { shadowLayer.shadowColor = shadowColor.cgColor } }
     /// Opacity of shadow. Default is `1.0`
