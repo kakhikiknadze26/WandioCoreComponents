@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "WandioCoreComponents"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "Reusable components in Swift."
 
   spec.description  = <<-DESC

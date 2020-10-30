@@ -214,6 +214,95 @@ let url = URL(string: "www.yourimageurl.com")!
 imageView.setImage(from: url, placeholderImage: UIImage(named: "youtImage"), cachePolicy: .useProtocolCachePolicy, completion: nil)
 ```
 
+#### LoaderView
+
+```UIView``` subclass with ```isLoading``` property alongside ```start()``` and ```stop()``` methods that set ```isLoading``` to true or false. Subclass ```LoaderView``` and create your own custom loader. Override ```start``` and ```stop``` methods an trigger your own custom animations and stuff. Once your custom loader is done, you can assign it on ```LoaderView.shared``` and by simply calling ```startLoader()``` and ```stopLoader()``` either on your view controller or view will start or stop your custom loading animation. Alternatively, you can have your custom loader instance in your controller or view and send it as a parameter. e.g. ```startLoader(YourCustomLoader())``` 
+
+Assuming you have your custom loader class
+
+```swift
+class MyLoader: LoaderView {
+    
+    let indicator = UIActivityIndicatorView(style: .large)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = UIColor.red.withAlphaComponent(0.5)
+        addSubview(indicator)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        indicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    }
+    
+    override func start() {
+        super.start()
+        indicator.startAnimating()
+    }
+    
+    override func stop() {
+        super.stop()
+        indicator.stopAnimating()
+    }
+    
+}
+```
+
+Set your loader as ```LoaderView.shared``` instance and calling loading methods without parameters will result presenting your custom loader
+
+```swift
+class ViewController: UIViewController {
+  
+    let loader = MyLoader()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        LoaderView.shared = loader
+    }
+
+    @IBAction func buttonTap(_ sender: UIButton) {
+        startLoader()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.stopLoader()
+        }
+    }
+    
+}
+
+```
+
+Or if you want to present different kind of loader for some special cases you can have your loader instance stored in your class and send it as a parameter
+
+```swift
+class ViewController: UIViewController {
+  
+    let loader = MyLoader()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        LoaderView.shared = loader
+    }
+
+    @IBAction func buttonTap(_ sender: UIButton) {
+        startLoader(loader)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            self.stopLoader(loader)
+        }
+    }
+    
+}
+```
+
+
+
 ## Author
 
 Kakhi Kiknadze, kakhi.kiknadze@wandio.com

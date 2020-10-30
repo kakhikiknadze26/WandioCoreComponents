@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA01C5F825382F4600AC4775 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01C5F725382F4600AC4775 /* Operators.swift */; };
 		AA067E7D2540B54100307520 /* WandioBottomSheetDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA067E7C2540B54100307520 /* WandioBottomSheetDelegate.swift */; };
+		AA0D7380254C48A9001FA784 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0D737F254C48A9001FA784 /* LoaderView.swift */; };
+		AA0D7388254C4DD3001FA784 /* LoaderExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0D7387254C4DD3001FA784 /* LoaderExtensions.swift */; };
 		AA1D070025375E1D00DAE979 /* RoundedShadowedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */; };
 		AA1D070625375E6800DAE979 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D070525375E6800DAE979 /* OTPTextField.swift */; };
 		AA1D07132537693000DAE979 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D07122537693000DAE979 /* OTPView.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		AA01C5F725382F4600AC4775 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		AA067E7C2540B54100307520 /* WandioBottomSheetDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WandioBottomSheetDelegate.swift; sourceTree = "<group>"; };
+		AA0D737F254C48A9001FA784 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		AA0D7387254C4DD3001FA784 /* LoaderExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderExtensions.swift; sourceTree = "<group>"; };
 		AA1D06FF25375E1D00DAE979 /* RoundedShadowedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowedTextField.swift; sourceTree = "<group>"; };
 		AA1D070525375E6800DAE979 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 		AA1D07122537693000DAE979 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,15 @@
 			path = Operators;
 			sourceTree = "<group>";
 		};
+		AA0D737E254C4894001FA784 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				AA0D737F254C48A9001FA784 /* LoaderView.swift */,
+				AA0D7387254C4DD3001FA784 /* LoaderExtensions.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		AA1D070425375E5B00DAE979 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +204,7 @@
 		AA8B4FA92535897100CAC206 /* WandioCoreComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AA0D737E254C4894001FA784 /* Loader */,
 				AA8603FC2548301C00AD90B6 /* ImageDownloader */,
 				AAF3EE642542F3EB00EA7631 /* Extensions */,
 				AA7048A0253DB2CC000AC8F4 /* BottomSheet */,
@@ -416,6 +430,7 @@
 				AAAD1BFC25359AB7009E9218 /* RoundedShadowedControl.swift in Sources */,
 				AA8604182548527E00AD90B6 /* Cache.swift in Sources */,
 				AAF3EE662542F3FE00EA7631 /* UIView+Extensions.swift in Sources */,
+				AA0D7388254C4DD3001FA784 /* LoaderExtensions.swift in Sources */,
 				AAF3EE602542F3BC00EA7631 /* DefaultBottomSheet.swift in Sources */,
 				AAC906D325384AC900A90B8E /* OTPViewDelegate.swift in Sources */,
 				AA01C5F825382F4600AC4775 /* Operators.swift in Sources */,
@@ -425,6 +440,7 @@
 				AA70488A253DB21F000AC8F4 /* Preview.swift in Sources */,
 				AAAD1C1225359AF1009E9218 /* ScreenFactor.swift in Sources */,
 				AA8603FE2548310100AD90B6 /* UIImage+Extensions.swift in Sources */,
+				AA0D7380254C48A9001FA784 /* LoaderView.swift in Sources */,
 				AA7048A2253DB326000AC8F4 /* WandioBottomSheet.swift in Sources */,
 				AAAD1BFB25359AB7009E9218 /* RoundedShadowedButton.swift in Sources */,
 			);
@@ -619,7 +635,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Wandio.WandioCoreComponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -644,7 +660,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Wandio.WandioCoreComponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -705,7 +721,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Wandio.WandioCoreComponentsExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -727,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Wandio.WandioCoreComponentsExamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
