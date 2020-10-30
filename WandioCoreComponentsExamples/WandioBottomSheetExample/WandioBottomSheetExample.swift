@@ -40,6 +40,7 @@ class CustomBottomSheet: WandioBottomSheet {
     
     private let handler = WandioBottomSheetHandlerView()
     private let content = BottomSheetContent()
+    private let vFXView = UIVisualEffectView()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,6 +62,24 @@ class CustomBottomSheet: WandioBottomSheet {
         handler.shadowOffset = CGSize(width: 0, height: -10 * screenFactor)
         handler.roundingCorners = [.topLeft, .topRight]
         handler.cornerRadius = 20 * screenFactor
+        backgroundView = vFXView
+        setupVFXView()
+    }
+    
+    private func setupVFXView() {
+        vFXView.effect = UIBlurEffect(style: .dark)
+    }
+    
+    override func beganPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        super.beganPanGesture(recognizer)
+    }
+    
+    override func changedPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        super.changedPanGesture(recognizer)
+    }
+    
+    override func endedPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        super.endedPanGesture(recognizer)
     }
     
 }
@@ -70,9 +89,11 @@ class BottomSheetController: UIViewController {
     let btnDefault = UIButton()
     let btnCustom = UIButton()
     let stack = UIStackView()
+    let imageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(imageView)
         view.backgroundColor = .orange
         btnDefault.setTitle("Present Default Bottom Sheet", for: .normal)
         btnDefault.addTarget(self, action: #selector(self.presentDefaultWandioBottomSheet), for: .touchUpInside)
@@ -86,6 +107,21 @@ class BottomSheetController: UIViewController {
         stack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         stack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+//        imageView.translatesAutoresizingMaskIntoConstraints = true
+//        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+//        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        imageView.frame = view.bounds
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        imageView.setImage(from: URL(string: "https://images.unsplash.com/photo-1556983990-db5d0cc3c67e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1275&q=80")!)
     }
 
     @objc private func presentDefaultWandioBottomSheet() {

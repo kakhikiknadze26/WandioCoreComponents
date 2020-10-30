@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonTap(_ sender: UIButton) {
-        updateImage()
-        return
+//        updateImage()
+//        return
         let vc = BottomSheetController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)

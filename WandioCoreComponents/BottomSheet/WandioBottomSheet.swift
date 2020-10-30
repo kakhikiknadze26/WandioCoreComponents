@@ -16,10 +16,16 @@ open class WandioBottomSheet: UIView {
     internal let handleArea = UIView()
     internal let contentView = UIView()
     
-    open var backgroundView = UIView()
+    open var backgroundView = UIView() {
+        didSet {
+            backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didTapBackground)))
+        }
+    }
     open var contentHeight: CGFloat?
     open var handleHeight: CGFloat?
     open var hasBackground = true
+    /// Percentage of pan change needed to trigger state change between expanded and collapsed. Default is `0.3`. If `nil`, there will be no threshold and ending pan will trigger next state or dismiss if needed.
+    open var panThreshold: CGFloat? = 0.3
     
     internal var topConstraint: NSLayoutConstraint?
     internal var originalTopConstraintConstant: CGFloat = .zero
@@ -36,7 +42,6 @@ open class WandioBottomSheet: UIView {
     }
     
     public var isExpanded = false
-    internal var shouldDismiss = false
     private var nextState: CardState {
         isExpanded ? .collapsed : .expanded
     }
@@ -142,6 +147,29 @@ open class WandioBottomSheet: UIView {
         }
     }
     
+    open func beganPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        delegate?.bottomSheet(self, didBeginPanGesture: recognizer)
+    }
+
+    open func changedPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: self)
+        let newConstant = max(0, (topConstraint?.constant ?? 0) + translation.y)
+        topConstraint?.constant = newConstant
+        delegate?.bottomSheet(self, didChangePanGesture: recognizer)
+        recognizer.setTranslation(.zero, in: self)
+    }
+
+    open func endedPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        if dismissIfNeeded() == false {
+            if let threshold = panThreshold, getTopConstraintChangePercentage() < threshold {
+                returnToCurrentState()
+                return
+            }
+            expand(nextState == .expanded)
+        }
+        delegate?.bottomSheet(self, didEndPanGesture: recognizer)
+    }
+    
 }
 
 // MARK: - Presentation
@@ -208,10 +236,11 @@ extension WandioBottomSheet {
     /// Presentation animation
     private func animatePresent(on view: UIView, completion: (() -> Void)? = nil) {
         transform = CGAffineTransform(translationX: 0, y: view.frame.height)
+        let originalAlpha = backgroundView.alpha
         backgroundView.alpha = 0
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseInOut) {
             self.transform = .identity
-            self.backgroundView.alpha = 0.4
+            self.backgroundView.alpha = originalAlpha
         } completion: { _ in
             self.isPresented = true
             completion?()
@@ -277,16 +306,14 @@ extension WandioBottomSheet {
 
     @objc private func handlePan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self)
-        guard !(isExpanded && translation.y < .zero) else { return }
+        guard !(isExpanded && translation.y < .zero && topConstraint?.constant == .zero) else { return }
         switch recognizer.state {
         case .began:
             beganPanGesture(recognizer)
         case .changed:
             changedPanGesture(recognizer)
-        case .ended:
-            endedPanGesture(recognizer)
         default:
-            break
+            endedPanGesture(recognizer)
         }
     }
 
@@ -295,28 +322,30 @@ extension WandioBottomSheet {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
             self.layoutIfNeeded()
         } completion: { _ in
-            self.isExpanded.toggle()
+            self.isExpanded = expand
         }
     }
-
-    open func beganPanGesture(_ recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: self)
-        guard !(isExpanded && translation.y < .zero) else { return }
-        shouldDismiss = (translation.y > .zero && !isExpanded)
-        delegate?.bottomSheet(self, didBeginPanGesture: recognizer)
+    
+    private func getTopConstraintChangePercentage() -> CGFloat {
+        guard let constant = topConstraint?.constant else { return 0 }
+        let delta = originalTopConstraintConstant - constant
+        let percentage = delta/originalTopConstraintConstant
+        return nextState == .collapsed ? 1 - percentage : percentage
     }
-
-    open func changedPanGesture(_ recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: self)
-        let newConstant = max(0, (topConstraint?.constant ?? 0) + translation.y)
-        topConstraint?.constant = newConstant
-        recognizer.setTranslation(.zero, in: self)
-        delegate?.bottomSheet(self, didChangePanGesture: recognizer)
+    
+    private func returnToCurrentState() {
+        expand(isExpanded)
     }
-
-    open func endedPanGesture(_ recognizer: UIPanGestureRecognizer) {
-        shouldDismiss ? dismiss() : expand(nextState == .expanded)
-        delegate?.bottomSheet(self, didEndPanGesture: recognizer)
+    
+    @discardableResult private func dismissIfNeeded() -> Bool {
+        guard let constant = topConstraint?.constant else { return false }
+        let delta = originalTopConstraintConstant - constant
+        if delta < 0 {
+            dismiss()
+            return true
+        } else {
+            return false
+        }
     }
 
 }
